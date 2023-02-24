@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "454126788870",
+    "firebase_url": "https://rush-exam-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "rush-exam",
+    "storage_bucket": "rush-exam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454126788870:android:7ca4f9e4e44b08025dfe87",
+        "android_client_info": {
+          "package_name": "com.example.exam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454126788870-1ql25th0cc34jmedp93qqvp2lk7ipopn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI72nnrdHFawtDl688LoY-q9m9LftauIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454126788870-1ql25th0cc34jmedp93qqvp2lk7ipopn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
