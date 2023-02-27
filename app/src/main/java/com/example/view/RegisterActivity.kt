@@ -3,11 +3,9 @@ package com.example.exam
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.Window
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.exam.databinding.ActivityRegisterBinding
-import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase

@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.exam.DashboardActivity
-import com.example.exam.LoginDataClass
 import com.example.exam.databinding.ActivityLoginBinding
 import com.google.firebase.database.*
 
