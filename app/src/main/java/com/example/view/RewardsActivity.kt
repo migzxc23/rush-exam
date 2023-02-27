@@ -18,7 +18,10 @@ class RewardsActivity: AppCompatActivity(){
         setContentView(binding.root)
 
         supportActionBar?.setTitle("Back")
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        if (getSupportActionBar() != null) {
+            getSupportActionBar()?.setDisplayHomeAsUpEnabled(true);
+        }
 
 
         binding.imageView.setImageResource(intent.getIntExtra("image",0))
@@ -55,16 +58,9 @@ class RewardsActivity: AppCompatActivity(){
 
     }
 
-    companion object {
-        private const val EXTRA_KEY_ID = "REWARDSACTIVITY.EXTRA_KEY_ID"
-
-        fun launch(launcher: Activity, id: Int) {
-            val intent = Intent(launcher, RewardsActivity::class.java)
-                .apply {
-                    putExtra(EXTRA_KEY_ID, id)
-                }
-            launcher.startActivity(intent)
-        }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed();
+        return true;
     }
 
 }
