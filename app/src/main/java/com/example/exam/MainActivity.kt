@@ -5,9 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
 import android.widget.Toast
+import com.example.DetailInterface
 import com.example.exam.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), DetailInterface {
 
     private var binding: ActivityMainBinding? = null
 
@@ -36,5 +37,13 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
 
         binding = null
+    }
+
+    override fun getDetail(image: Int, caption: String, description: String) {
+        val intent = Intent(this, RewardsActivity::class.java)
+        intent.putExtra("image", image)
+        intent.putExtra("caption",caption)
+        intent.putExtra("description", description)
+        startActivity(intent)
     }
 }

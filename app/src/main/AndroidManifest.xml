@@ -25,6 +25,9 @@
             android:name=".DashboardActivity"
             android:parentActivityName=".MainActivity"
             android:exported="false"/>
+        <activity android:name=".RewardsActivity"
+            android:parentActivityName=".DashboardActivity"
+            android:exported="false"/>
 
         <activity
             android:name=".MainActivity"

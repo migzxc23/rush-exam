@@ -28,19 +28,37 @@ class DashboardActivity: AppCompatActivity() {
         firebaseDatabase = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase?.getReference("Users")
 
-//        getData()
+
+
+        // REGISTER
         @Suppress("DEPRECATION")
         val user = intent.getSerializableExtra("user") as RegisterDataClass
 
 
-        val firstName = user.firstName
-        val lastName = user.lastName
-        val mobile = user.mobile
-        val voucher = user.voucher
-        val fullName = "$firstName $lastName"
-        binding?.fullName.text = fullName
-        binding?.mobileNumber.text = mobile
-        binding?.voucher.text = voucher
+
+        if(user.whereFrom == "fromRegister"){
+            val firstName = user.firstName
+            val lastName = user.lastName
+            val mobile = user.mobile
+            val voucher = user.voucher
+            val fullName = "$firstName $lastName"
+            binding?.fullName.text = fullName
+            binding?.mobileNumber.text = mobile
+            binding?.voucher.text = voucher
+        }
+        else if(user.whereFrom == "fromLogin"){
+            val firstName = user.firstName
+            val lastName = user.lastName
+            val mobile = user.mobile
+            val voucher = user.voucher
+            val fullName = "$firstName $lastName"
+            binding?.fullName.text = fullName
+            binding?.mobileNumber.text = mobile
+            binding?.voucher.text = voucher
+        }
+
+
+
 
 
 //        databaseReference?.child("Users")?.child("mobile")?.get()?.addOnSuccessListener {

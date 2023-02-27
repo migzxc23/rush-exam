@@ -48,6 +48,7 @@
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/mobile"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Mobile No."
@@ -71,7 +72,7 @@
 
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/password"
+                    android:id="@+id/mpin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="MPIN"

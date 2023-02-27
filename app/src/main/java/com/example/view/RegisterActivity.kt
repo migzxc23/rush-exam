@@ -18,7 +18,6 @@ open class RegisterActivity : AppCompatActivity(){
     private lateinit var binding : ActivityRegisterBinding
     private lateinit var database : DatabaseReference
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     FirebaseApp.initializeApp(this)
@@ -27,40 +26,37 @@ open class RegisterActivity : AppCompatActivity(){
     binding = ActivityRegisterBinding.inflate(layoutInflater)
     setContentView(binding.root)
 
-
     binding.btnRegister.setOnClickListener{
         val firstName = binding?.firstName.text.toString()
         val lastName = binding?.lastName.text.toString()
         val mobile = binding?.mobile.text.toString()
         val mpin = binding?.mpin.text.toString()
-        val voucher = generateRandomVarchar(5)
+        val confMpin = binding?.confMpin.text.toString()
 
-        database = FirebaseDatabase.getInstance().getReference("Users")
+        if(mpin == confMpin){
+            val voucher = generateRandomVarchar(5)
+            database = FirebaseDatabase.getInstance().getReference("Users")
+            val user = RegisterDataClass(firstName, lastName, mobile, mpin, voucher, "fromRegister")
+            Log.e("=====", user.toString())
+            val intent = Intent(this, DashboardActivity::class.java)
+            intent.putExtra("user",user)
+            startActivity(intent)
 
-        val user = RegisterDataClass(firstName, lastName, mobile, mpin, voucher)
-        Log.e("=====", user.toString())
-        val intent = Intent(this, DashboardActivity::class.java)
-        intent.putExtra("user",user)
-        startActivity(intent)
-
-        
-
-        database.child(mobile).setValue(user).addOnSuccessListener {
-            binding.firstName.text?.clear()
-            binding.lastName.text?.clear()
-            binding.mobile.text?.clear()
-            binding.mpin.text?.clear()
-            binding.confMpin.text?.clear()
-
-
-            Toast.makeText(this, "User Successfully Registered", Toast.LENGTH_LONG).show()
-
-
+            database.child(mobile).setValue(user).addOnSuccessListener {
+                binding.firstName.text?.clear()
+                binding.lastName.text?.clear()
+                binding.mobile.text?.clear()
+                binding.mpin.text?.clear()
+                binding.confMpin.text?.clear()
+                Toast.makeText(this, "User Successfully Registered", Toast.LENGTH_LONG).show()
+            }
 
         }
-
-
-
+        else{
+            Toast.makeText(this, "mPIN mismatch.", Toast.LENGTH_LONG).show()
+            binding.mpin.text?.clear()
+            binding.confMpin.text?.clear()
+        }
     }
     }
 
