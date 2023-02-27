@@ -32,15 +32,15 @@ class DashboardAdapter(
     override fun onBindViewHolder(holder: DashboardMainViewHolder, position: Int) {
         val task = dashboardDataClass[position]
         holder.itemBind(task)
-        holder.cardView.setOnClickListener {
-            val intent = Intent(holder.itemView.context, RewardsActivity::class.java)
-            intent.putExtra("caption", task.caption)
-            intent.putExtra("image", task.image)
-            intent.putExtra("description", task.description)
-            intent.putExtra("task", task)
-
-            holder.itemView.context.startActivity(intent)
-        }
+//        holder.cardView.setOnClickListener {
+//            val intent = Intent(holder.itemView.context, RewardsActivity::class.java)
+//            intent.putExtra("caption", task.caption)
+//            intent.putExtra("image", task.image)
+//            intent.putExtra("description", task.description)
+//            intent.putExtra("task", task)
+//
+//            holder.itemView.context.startActivity(intent)
+//        }
 
         holder.cardView.setOnClickListener {
             detailInterface.getDetail(task.image, task.caption, task.description)

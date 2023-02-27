@@ -7,12 +7,13 @@ import android.os.Bundle
 import android.util.Log
 
 import androidx.appcompat.app.AppCompatActivity
+import com.example.DetailInterface
 import com.example.exam.databinding.ItemListBinding
 import com.google.firebase.database.*
 import com.example.exam.RegisterActivity
 
 
-class DashboardActivity: AppCompatActivity() {
+class DashboardActivity: AppCompatActivity(),DetailInterface {
 
     private var firebaseDatabase: FirebaseDatabase? = null
     private var databaseReference: DatabaseReference? = null
@@ -22,7 +23,7 @@ class DashboardActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ItemListBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val adapter = DashboardAdapter(VoucherObjects.voucherObjects)
+        val adapter = DashboardAdapter(VoucherObjects.voucherObjects, this@DashboardActivity)
         binding?.taskRv?.adapter = adapter
 
         firebaseDatabase = FirebaseDatabase.getInstance()
@@ -61,6 +62,8 @@ class DashboardActivity: AppCompatActivity() {
 
 
 
+
+
 //        databaseReference?.child("Users")?.child("mobile")?.get()?.addOnSuccessListener {
 //            val firstName = it.child("firstName").value.toString()
 //            val lastName = it.child("lastName").value.toString()
@@ -78,6 +81,14 @@ class DashboardActivity: AppCompatActivity() {
 
 
 
+    }
+
+    override fun getDetail(image: Int, caption: String, description: String) {
+        val intent = Intent(this, RewardsActivity::class.java)
+        intent.putExtra("image", image)
+        intent.putExtra("caption",caption)
+        intent.putExtra("description", description)
+        startActivity(intent)
     }
 
 

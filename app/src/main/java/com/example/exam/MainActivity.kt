@@ -8,7 +8,7 @@ import android.widget.Toast
 import com.example.DetailInterface
 import com.example.exam.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), DetailInterface {
+class MainActivity : AppCompatActivity(){
 
     private var binding: ActivityMainBinding? = null
 
@@ -39,11 +39,11 @@ class MainActivity : AppCompatActivity(), DetailInterface {
         binding = null
     }
 
-    override fun getDetail(image: Int, caption: String, description: String) {
-        val intent = Intent(this, RewardsActivity::class.java)
-        intent.putExtra("image", image)
-        intent.putExtra("caption",caption)
-        intent.putExtra("description", description)
-        startActivity(intent)
-    }
+//    override fun getDetail(image: Int, caption: String, description: String) {
+//        val intent = Intent(this, RewardsActivity::class.java)
+//        intent.putExtra("image", image)
+//        intent.putExtra("caption",caption)
+//        intent.putExtra("description", description)
+//        startActivity(intent)
+//    }
 }
