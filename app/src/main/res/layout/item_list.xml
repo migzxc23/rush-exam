@@ -4,14 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".DashboardActivity">
 
 
 
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="138dp"
         android:background="@color/purple_700"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -22,89 +23,51 @@
     </View>
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/fullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Miguel Recido"
             android:layout_marginTop="20dp"
-            android:textSize="25sp"
-            android:textStyle="bold"
             android:gravity="center"
-            android:textColor="@color/white"/>
+            android:text="Miguel Recido"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/mobileNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="09387977646"
-            android:textSize="18sp"
             android:gravity="center"
-            android:textColor="@color/white"/>
+            android:text="09387977646"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
         <TextView
             android:id="@+id/voucher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="qwe123"
             android:layout_marginTop="20dp"
-            android:textSize="18sp"
-            android:textStyle="bold"
             android:gravity="center"
-            android:textColor="@color/white"/>
+            android:text="qwe123"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/taskRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+            tools:listitem="@layout/recycler_view_item" />
 
     </LinearLayout>
-
-
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view">
-
-        <LinearLayout
-            android:oritentation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <ImageView
-                android:src="@drawable/ayalaland"
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="90dp">
-            </ImageView>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/my_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Get free land!"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
